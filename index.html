@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Dota Stats</title>
+
+    <link href="resources/css/main.css" rel="stylesheet">
+
+    <script src="resources/libs/Chart.js"></script>
+
+    <script src="resources/js/info.js"></script>
+    <script src="resources/js/screen.js"></script>
+    <script src="resources/js/main.js"></script>
+
+    <script src="resources/js/helpers.js"></script>
+    <script src="resources/js/tooltips.js"></script>
+
+    <script src="resources/js/page.js" defer></script>
+</head>
+<body>
+    <div id="main-display">
+        <div id="tooltip-display">
+            <table id="tooltip-table">
+                <thead>
+                    <tr>
+                        <th>Info</th>
+                        <th>Value</th>
+                    </tr>
+                </thead>
+                <tbody id="tooltip-body"></tbody>
+            </table>
+        </div>
+        <div id="chart-container">
+            <div class="title-box">
+              <h1>Dota Stats</h1>
+            </div>
+            <canvas id="main-chart" height="100%"></canvas>
+        </div>
+    </div>
+    <div id="controllers">
+        <div id="y-axis-control">
+            <label for="y-axis">Y</label>
+            <select id="y-axis"></select>
+        </div>
+        <div id="x-axis-control">
+            <label for="x-axis">X</label>
+            <select id="x-axis"></select>
+        </div>
+
+        <div class="check-box-control">
+            <label for="by-time">By Time</label>
+            <input id="by-time" class="checkbox" type="checkbox" checked>
+        </div>
+        <div class="check-box-control">
+            <label for="by-hero">By Hero</label>
+            <input id="by-hero" class="checkbox" type="checkbox">
+        </div>
+        <div id="limit-control">
+            <label for="limiter">Hero</label>
+            <select id="limiter"></select>
+        </div>
+    </div>
+</body>
+</html>
