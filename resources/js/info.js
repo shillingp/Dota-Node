@@ -1,11 +1,3 @@
-var path = './resources/js';
-var fs = require("fs");
-
-fs.watch(path, function() {
-    if (location)
-    location.reload();
-});
-
 
 function getHero(id) {
     if (!Heroes[id]) {throw "No hero with this ID: " + id;}

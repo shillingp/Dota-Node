@@ -1,13 +1,4 @@
-Array.prototype.delayedForEach = function(callback, timeout, thisArg){
-  var i = 0,
-    l = this.length,
-    self = this,
-    caller = function(){
-      callback.call(thisArg || self, self[i], i, self);
-      (++i < l) && setTimeout(caller, timeout);
-    };
-  caller();
-};
+
 
 var fs = require("fs");
 
@@ -55,7 +46,6 @@ function filterDetails(data) {
     } else {
         newLength -= 1;
     }
-    console.log(newLength + " : " + matchesData.length)
     if (matchesData.length === newLength) {
         matchesData.sort(function(a, b) {
             return b.match_id - a.match_id;
@@ -84,9 +74,7 @@ function getMatchStats(data) {
                 getDetails({match_id: match.match_id});
                 settings.start_time = match.start_time
             }
-        }, 500);
-        //  ^^ This decreases the speed so dont get kicked
-        //  1000 is min, 1500 is safe
+        }, 1000); // Speed is 1000ms RECOMMENDED
     } catch(e) {
         if (e !== BreakException) throw e
     }
